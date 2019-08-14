@@ -8,9 +8,9 @@ A beta version of the Input Method will be published here soon.
 
 ## Font
 
-Font name: EgyptianHiero⋅⋅
-Version: 4.02 - March 4 2019⋅⋅
-Format: TrueType® Font
+⋅⋅⋅Font name: EgyptianHiero⋅⋅
+⋅⋅⋅Version: 4.02 - March 4 2019⋅⋅
+⋅⋅⋅Format: TrueType® Font
 
 Designed by Marwan Kilani, 2017-9. All Rights Reserved
 Glyph outlines based on Mark-Jan Nederhof's font NewGardiner.

@@ -1,6 +1,6 @@
 # Djehuty
 
-Djehuty is a ongoing project by Marwan Kilani (Freie Universität Berlin - Swiss National Science Foundation) aiming at the development of a Unicode font and Input Method for ancient Egyptian hieroglyphs.
+Djehuty is an ongoing project by Marwan Kilani (Freie Universität Berlin - Swiss National Science Foundation) aiming at the development of a Unicode font and Input Method for ancient Egyptian hieroglyphs.
 
 A first working version of the font is already available and it is provided in the present repository.
 

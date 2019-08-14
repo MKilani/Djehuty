@@ -20,7 +20,7 @@ A beta version of the Input Method will be published here soon.
 
 The font EgyptianHiero has being used in the following projects and publications:
 
-* Digitale Einführung in die hieroglyphisch-ägyptische Schrift und Sprache  
+* **Digitale Einführung in die hieroglyphisch-ägyptische Schrift und Sprache**  
    Daniel A. Werning  
    Humboldt-Universität zu Berlin: Berlin 2018–...  
    https://wikis.hu-berlin.de/ancientegyptian/Inhaltsverzeichnis

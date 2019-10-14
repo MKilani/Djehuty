@@ -18,7 +18,7 @@ A beta version of the Input Method will be published here soon.
 
 ### How to cite
 
-Kilani Marwan, 2019, EgyptianHiero 4.02 (4.3.2019), https://github.com/MKilani/Djehuty
+Kilani Marwan, 2019, Djehuty - Font EgyptianHiero 4.02 (4.3.2019), https://github.com/MKilani/Djehuty
 
 ### Examples
 

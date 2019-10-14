@@ -16,6 +16,10 @@ A beta version of the Input Method will be published here soon.
    Glyph outlines based on Mark-Jan Nederhof's font NewGardiner.  
    All Rights Reserved
 
+### How to cite
+
+Kilani Marwan, 2019, EgyptianHiero 4.02 (4.3.2019), https://github.com/MKilani/Djehuty
+
 ### Examples
 
 The font EgyptianHiero has being used in the following projects and publications:

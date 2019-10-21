@@ -9,6 +9,7 @@ A beta version of the Input Method will be published here soon.
 ## Font
 
    Download: ![EgyptianHiero 4.02](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero4.02.ttf)
+   
    Font name: EgyptianHiero  
    Version: 4.02 - March 4 2019  
    Format: TrueType® Font

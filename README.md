@@ -81,9 +81,13 @@ Therefore, for instance:
 
 - Without Formatting Marks option is activated
 
+<img src="imagesReadme/Without_Formatting_Marks.jpg" width="400">
+
 ![](imagesReadme/Without_Formatting_Marks.jpg)
 
 - With Formatting Marks option is activated
+
+<img src="imagesReadme/With_Formatting_Marks.jpg" width="400">
 
 ![](imagesReadme/With_Formatting_Marks.jpg)
 
@@ -97,11 +101,13 @@ Breaking Ligature Characters can be used in two ways.
 
 Consider the following two examples: the two sentences in the image are displayed exactly in the same way:
 
+<img src="imagesReadme/BLC-hidden.jpg" width="600">
+
 ![](imagesReadme/BLC-hidden.jpg?s=200)
 
 Their underlying structure, however, is different, one reflecting the first approach, the other reflecting the second.
 
-<img src="imagesReadme/BLC-display.jpg" width="300">
+<img src="imagesReadme/BLC-display.jpg" width="600">
 
 ![](imagesReadme/BLC-display.jpg)
 

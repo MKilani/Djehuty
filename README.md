@@ -101,7 +101,9 @@ Consider the following two examples: the two sentences in the image are displaye
 
 Their underlying structure, however, is different, one reflecting the first approach, the other reflecting the second.
 
-![](imagesReadme/BLC-display.jpg?s=20)
+<img src="imagesReadme/BLC-display.jpg" width="300">
+
+![](imagesReadme/BLC-display.jpg)
 
 Both approaches are valid, depending on the context and use of the text.
 

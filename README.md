@@ -97,11 +97,11 @@ Breaking Ligature Characters can be used in two ways.
 
 Consider the following two examples: the two sentences in the image are displayed exactly in the same way:
 
-![](imagesReadme/BLC-hidden.jpg)
+![](imagesReadme/BLC-hidden.jpg | width=100)
 
 Their underlying structure, however, is different, one reflecting the first approach, the other reflecting the second.
 
-![](imagesReadme/BLC-display.jpg)
+![](imagesReadme/BLC-display.jpg | width=100)
 
 Both approaches are valid, depending on the context and use of the text.
 

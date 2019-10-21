@@ -81,15 +81,15 @@ Therefore, for instance:
 
 - Without Formatting Marks option is activated
 
+<p align="center">
 <img src="imagesReadme/Without_Formatting_Marks.jpg" width="400">
-
-![](imagesReadme/Without_Formatting_Marks.jpg)
+</p>
 
 - With Formatting Marks option is activated
 
+<p align="center">
 <img src="imagesReadme/With_Formatting_Marks.jpg" width="400">
-
-![](imagesReadme/With_Formatting_Marks.jpg)
+</p>
 
 ##### When to use the Breaking Ligature Character – suggest best practice
 
@@ -101,15 +101,15 @@ Breaking Ligature Characters can be used in two ways.
 
 Consider the following two examples: the two sentences in the image are displayed exactly in the same way:
 
+<p align="center">
 <img src="imagesReadme/BLC-hidden.jpg" width="600">
-
-![](imagesReadme/BLC-hidden.jpg?s=200)
+</p>
 
 Their underlying structure, however, is different, one reflecting the first approach, the other reflecting the second.
 
+<p align="center">
 <img src="imagesReadme/BLC-display.jpg" width="600">
-
-![](imagesReadme/BLC-display.jpg)
+</p>
 
 Both approaches are valid, depending on the context and use of the text.
 

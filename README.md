@@ -8,10 +8,10 @@ A beta version of the Input Method will be published here soon.
 
 ## Font
 
-   Download: ![EgyptianHiero 4.02](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero4.02.ttf)
+   Download: ![EgyptianHiero 4.03](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero4.03.ttf)
    
    Font name: EgyptianHiero  
-   Version: 4.02 - March 4 2019  
+   Version: 4.03 - October 14 2019  
    Format: TrueType® Font
 
    Designed by Marwan Kilani, 2017-9.  

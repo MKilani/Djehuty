@@ -102,13 +102,13 @@ Breaking Ligature Characters can be used in two ways.
 Consider the following two examples: the two sentences in the image are displayed exactly in the same way:
 
 <p align="center">
-<img src="imagesReadme/BLC-hidden.jpg" width="600">
+<img src="imagesReadme/BLC-display.jpg" width="600">
 </p>
 
 Their underlying structure, however, is different, one reflecting the first approach, the other reflecting the second.
 
 <p align="center">
-<img src="imagesReadme/BLC-display.jpg" width="600">
+<img src="imagesReadme/BLC-hidden.jpg" width="600">
 </p>
 
 Both approaches are valid, depending on the context and use of the text.

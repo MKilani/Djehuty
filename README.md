@@ -115,8 +115,11 @@ Both approaches are valid, depending on the context and use of the text.
 
 In case of static texts that are not going to be modified in the future (e.g. the texts meant to be published in articles and monographs), the first approach is probably more practical. By contrast, in the case of texts that are expected to be used and edited in the future (e.g. in database and text corpora) the second approach may be more appropriate, as it ensures compatibility with future versions of the font – by separating ever sign that should NOT be joined by a ligature, one is sure that the rendition of the text will not be affected by the addition of new ligatures in future versions of the font.
 
+## Input Method
 
-### Examples
+Coming soon.
+
+## Examples
 
 The font EgyptianHiero has being used in the following projects and publications:
 
@@ -125,11 +128,8 @@ The font EgyptianHiero has being used in the following projects and publications
    Humboldt-Universität zu Berlin: Berlin 2018–...  
    https://wikis.hu-berlin.de/ancientegyptian/Inhaltsverzeichnis
 
-## Input Method
-
-Coming soon.
 
 –-
 
-Last Update: 15.8.2019
+Last Update: 21.10.2019
 

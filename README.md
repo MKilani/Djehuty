@@ -101,7 +101,7 @@ Consider the following two examples: the two sentences in the image are displaye
 
 Their underlying structure, however, is different, one reflecting the first approach, the other reflecting the second.
 
-![](imagesReadme/BLC-display.jpg?s=200)
+![](imagesReadme/BLC-display.jpg?s=20)
 
 Both approaches are valid, depending on the context and use of the text.
 

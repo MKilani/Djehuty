@@ -24,11 +24,7 @@ Kilani Marwan, 2019, Djehuty - Font EgyptianHiero 4.02 (4.3.2019), https://githu
 
 #### The problem
 
-In actual texts, hieroglpyhs are usually distributed into so-called "quadrats", namely virtual rectangles or squares that provide a conceptual frame to organize the signs into space. For instance, the signs 
-
-![Alt text](imagesReadme/htp1.jpg)
-
-xxxHtp, are usually not written in a linear sequence, one after the other, but they are rather reorganized within a single quadrat, in the form xxx.
+In actual texts, hieroglpyhs are usually distributed into so-called "quadrats", namely virtual rectangles or squares that provide a conceptual frame to organize the signs into space. For instance, the signs ![](imagesReadme/htp2.jpg) , are usually not written in a linear sequence, one after the other, but they are rather reorganized within a single quadrat, in the form ![](imagesReadme/htp1.jpg) .
 
 In contrast with other fonts, which display hieroglpyhs only in linear sequences, EgyptianHiero reorganize the signs into quadrats.
 
@@ -36,7 +32,7 @@ In contrast with other fonts, which display hieroglpyhs only in linear sequences
 
 In order to organize and display the hieroglyphs into quadrats, the EgyptianHiero font uses a series of *ligatures* pre-encoded in the font itself.
 
-In order to understand what this means, take the example of the English ligature f+f+l > ﬄ or the Hindi ligature ह + म > ह्म . In these cases, fonts that support ligatures will automatically turn any sequence f+f+l or  ह + म into their corresponding ligatures, thus displaying them as ﬄ or ह्म respectively.
+In order to understand what this means, take the example of the English ligature ![](imagesReadme/fi-fi.jpg) or the Hindi ligature ![](imagesReadme/ma-ha.jpg) . In these cases, fonts that support ligatures will automatically turn any sequence f + i or  ह + म into their corresponding ligatures, thus displaying them as ![](imagesReadme/fi_lig.jpg) or ![](imagesReadme/ma-ha_lig.jpg) respectively.
 
 EgyptianHiero uses the same mechanism to organize signs into quadrats: every time the font encounter a sequence of signs corresponding to one of its pre-encoded ligatures, it will reorganize the signs into quadrats accordingly.
 

@@ -26,7 +26,7 @@ Kilani Marwan, 2019, Djehuty - Font EgyptianHiero 4.02 (4.3.2019), https://githu
 
 In actual texts, hieroglpyhs are usually distributed into so-called "quadrats", namely virtual rectangles or squares that provide a conceptual frame to organize the signs into space. For instance, the signs 
 
-![Alt text](imagesReadme/htp:1.pdf?raw=true "Title")
+![Alt text](imagesReadme/htp1.pdf?raw=true "Title")
 
 xxxHtp, are usually not written in a linear sequence, one after the other, but they are rather reorganized within a single quadrat, in the form xxx.
 

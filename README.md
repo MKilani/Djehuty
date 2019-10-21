@@ -25,7 +25,7 @@ Kilani Marwan, 2019, Djehuty - Font EgyptianHiero 4.02 (4.3.2019), https://githu
 
 #### The problem
 
-In actual texts, hieroglyphs are usually distributed into so-called "quadrats", namely virtual rectangles or squares that provide a conceptual frame to organize the signs into space. For instance, the signs ![](imagesReadme/htp.jpg) , are usually not written in a linear sequence, one after the other, but they are rather reorganized within a single quadrat, in the form ![](imagesReadme/htp_quad.jpg) .
+In actual texts, hieroglyphs are usually distributed into so-called "quadrats", namely virtual rectangles or squares that provide a conceptual frame to organize the signs into space. For instance, the signs ![](imagesReadme/htp.jpg) , are usually not written in a linear sequence, one after the other, but they are rather reorganized within a single quadrat, in the form ![](imagesReadme/htp-qad.jpg) .
 
 In contrast with other fonts, which display hieroglyphs only in linear sequences, EgyptianHiero reorganize the signs into quadrats.
 
@@ -37,13 +37,13 @@ In order to understand what this means, take the example of the English ligature
 
 EgyptianHiero uses the same mechanism to organize signs into quadrats: every time the font encounters a sequence of signs corresponding to one of its pre-encoded ligatures, it will reorganize the signs into quadrats accordingly.
 
-Therefore, every time the font will encounter a sequence ![](imagesReadme/htp.jpg), it will display it as a ligature/quadrat ![](imagesReadme/htp_quad.jpg).
+Therefore, every time the font will encounter a sequence ![](imagesReadme/htp.jpg), it will display it as a ligature/quadrat ![](imagesReadme/htp-qad.jpg).
 
 This approach has a series of implications that need to be considered:
 
 1. Since ligatures are embedded in the font and automatically rendered, there is no need to use any special character to indicate the relative position of the signs. No need for positional cmarkers like : , * , - as in Manuel de Codage or Jsesh. Just input the hieroglyphs one after the other, the font will take care of grouping them into quadrats.
 
-2. Since no special character is used, a quadrat ![](imagesReadme/htp_quad.jpg) will still correspond to an underlying sequence ![](imagesReadme/htp.jpg). This means that in general search functions (e.g. in online search engines or text files and text editors) can find signs within quadrats, and can even find sequences of signs spread over different quadrats.
+2. Since no special character is used, a quadrat ![](imagesReadme/htp-qad.jpg) will still correspond to an underlying sequence ![](imagesReadme/htp.jpg). This means that in general search functions (e.g. in online search engines or text files and text editors) can find signs within quadrats, and can even find sequences of signs spread over different quadrats.
 
 3. Only ligatures, i.e. only quadrats that are pre-encoded in the font can be displayed by the font. This is an important point: one cannot create custom quadrats using EgyptianHiero – only the quadrats that are already known by the font can be displayed. 
 

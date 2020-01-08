@@ -6,6 +6,14 @@ A first working version of the font is already available and it is provided in t
 
 A beta version of the Input Method will be published here soon.
 
+## Unicode hieroglyphs: what for?
+
+Unicode hieroglyphs are meant to provide an easy and effective way to transcribe Egyptian Hierogypliphs as strings of texts, rather than as automatically generated images, as it is the case of tools like jSesh. Dealing with hieroglyphs as strings of texts has a series of advantages: unicode hieroglpyhs can be used in and editor or text field, and can be manipulated as any other text. For instance, unicode hieroglyphs can be inserted, as text, within any text written with a text editor. They can also be searched using standard search tools, for instance in text editors or in online search engines. Unicode hieroglyphs can also be used, and searched for, in databases and in tables. They can be exported in standard .pdf files and searched within them.
+
+Unicode hieroglyphs, however, can only be manipulated within the limits of the font used to display them. Overall, this means that unicode hierogplyphs are often not suited, and in fact are not meant for paleographically accurate transcriptions of texts on actual objects. Rather, they are meant to transcribe texts in a uniform way, for instance when a text has to be quote and discussed in a scientific paper because of its literary or linguistic content, rather than because of its actual appearence on the actual support.
+
+Think about a medieval Latin manuscript: one can provide an accurate, form-wise paleographical copy of it, in which all the graphic peculiarities of letters characterising the style of the specific scribe are accurately reproduced, or one can provide a content-wise accurate transcription in a standard modern Latin-script font, for instance in the context of a critical edition of the text. Unicode hierogliphs are meant for the Egyptological equivalent of the latter.
+
 ## Font
 
    Download: ![EgyptianHiero 4.03](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero4.03.ttf)
@@ -80,13 +88,13 @@ These features, however, tend to change from one version to the other, and more 
 The ZWSP is invisible in the final output, but various text editors allow displaying it together with other Formatting Marks when the Formatting Marks option is activated. 
 Therefore, for instance:
 
-- Without Formatting Marks option is activated
+- Without Formatting Marks option activated
 
 <p align="center">
 <img src="imagesReadme/Without_Formatting_Marks.jpg" width="400">
 </p>
 
-- With Formatting Marks option is activated
+- With Formatting Marks option activated
 
 <p align="center">
 <img src="imagesReadme/With_Formatting_Marks.jpg" width="400">
@@ -115,10 +123,6 @@ Their underlying structure, however, is different, one reflecting the first appr
 Both approaches are valid, depending on the context and use of the text.
 
 In case of static texts that are not going to be modified in the future (e.g. the texts meant to be published in articles and monographs), the first approach is probably more practical. By contrast, in the case of texts that are expected to be used and edited in the future (e.g. in database and text corpora) the second approach may be more appropriate, as it ensures compatibility with future versions of the font – by separating ever sign that should NOT be joined by a ligature, one is sure that the rendition of the text will not be affected by the addition of new ligatures in future versions of the font.
-
-## Unicode hieroglyphs: what for?
-
-Coming soon.
 
 ## Input Method
 

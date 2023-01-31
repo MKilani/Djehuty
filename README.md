@@ -16,7 +16,7 @@ Think about a medieval Latin manuscript: one can provide an accurate, form-wise 
 
 ## Font
 
-   Download: ![EgyptianHiero 4.03](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero4.03.ttf)
+   Download: [EgyptianHiero 4.03](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero4.03.ttf)
    
    Font name: EgyptianHiero  
    Version: 4.03 - October 14 2019  
@@ -68,9 +68,9 @@ As said, EgyptianHiero does not use any special character to create quadrats –
 
 ##### Breaking Ligature Character
 
-This issue can be easily solved by using a Breaking Ligature Character (BLC). A BLC is a special invisible character that prevents the font from joining two signs into a quadrat. The sign I use to use for this purpose is the special character Zero-width space (ZWSP – unicode U+200B – see ![Wiki: Zero-Width Space](https://en.wikipedia.org/wiki/Zero-width_space) ).
+This issue can be easily solved by using a Breaking Ligature Character (BLC). A BLC is a special invisible character that prevents the font from joining two signs into a quadrat. The sign I use to use for this purpose is the special character Zero-width space (ZWSP – unicode U+200B – see [Wiki: Zero-Width Space](https://en.wikipedia.org/wiki/Zero-width_space) ).
 
-An alternative sign that could be used is the Zero-width non-joiner (ZWNJ – unicode U+200C – see ![Wiki: Zero-Width non-joiner](https://en.wikipedia.org/wiki/Zero-width_non-joiner) ).
+An alternative sign that could be used is the Zero-width non-joiner (ZWNJ – unicode U+200C – see [Wiki: Zero-Width non-joiner]( https://en.wikipedia.org/wiki/Zero-width_non-joiner ) ).
 
 For now, I prefer the first as it is easier to manipulate in text editors like LibreOffice. However, and comment or suggestion on this point is welcome.
 

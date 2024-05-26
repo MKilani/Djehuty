@@ -16,7 +16,9 @@ Think about a medieval Latin manuscript: one can provide an accurate, form-wise 
 
 ## Font
 
-   Download: [EgyptianHiero 4.03](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero4.03.ttf)
+   Download: 
+   
+   [EgyptianHiero 4.03](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero4.03.ttf)
    
    Font name: EgyptianHiero  
    Version: 4.03 - October 14 2019  
@@ -25,6 +27,12 @@ Think about a medieval Latin manuscript: one can provide an accurate, form-wise 
    Designed by Marwan Kilani, 2017-9.  
    Glyph outlines based on Mark-Jan Nederhof's font NewGardiner.  
    All Rights Reserved
+
+   Legacy versions (these contain less ligatures, they are more suited for basic tasks):
+
+   [EgyptianHiero 3.03 ttf](https://github.com/MKilani/Djehuty/blob/master/egyptianhiero3.03.ttf)
+   [EgyptianHiero 3.03 woff](https://github.com/MKilani/Djehuty/blob/master/egyptianhiero3.03.woff)
+   [EgyptianHiero 3.03 woff2](https://github.com/MKilani/Djehuty/blob/master/egyptianhiero3.03.woff2)
 
 ### How to cite
 

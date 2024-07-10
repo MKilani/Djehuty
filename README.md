@@ -30,11 +30,11 @@ Think about a medieval Latin manuscript: one can provide an accurate, form-wise 
 
    Legacy versions (these contain less ligatures, they are more suited for basic tasks):
 
-   [EgyptianHiero 3.03 ttf](https://github.com/MKilani/Djehuty/blob/master/egyptianhiero3.03.ttf)
+   [EgyptianHiero 3.03 ttf](https://github.com/MKilani/Djehuty/blob/master/egyptianhiero3.03a.ttf)
 
-   [EgyptianHiero 3.03 woff](https://github.com/MKilani/Djehuty/blob/master/egyptianhiero3.03.woff)
+   [EgyptianHiero 3.03 woff](https://github.com/MKilani/Djehuty/blob/master/egyptianhiero3.03a.woff)
    
-   [EgyptianHiero 3.03 woff2](https://github.com/MKilani/Djehuty/blob/master/egyptianhiero3.03.woff2)
+   [EgyptianHiero 3.03 woff2](https://github.com/MKilani/Djehuty/blob/master/egyptianhiero3.03a.woff2)
 
 ### How to cite
 

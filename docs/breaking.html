@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breaking characters · Djehuty</title>
+<meta name="description" content="Djehuty: a Unicode font and input method for ancient Egyptian hieroglyphs.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <p class="brand">Djehuty</p>
+  <p class="brand-sub">Unicode hieroglyphs · font and input method</p>
+  <nav class="menu" aria-label="Site">
+      <a href="index.html">Overview</a>
+      <a href="why-unicode.html">Why Unicode?</a>
+      <a href="typing.html">Typing reference</a>
+      <a href="quadrats.html">Quadrats and ligatures</a>
+      <a href="breaking.html" aria-current="page">Breaking characters</a>
+      <a href="font.html">The font</a>
+      <a href="examples.html">Examples and citation</a>
+      <a href="feedback.html">Feedback</a>
+  </nav>
+  <p class="aside-foot">Marwan Kilani<br>Freie Universität Berlin<br>Swiss National Science Foundation</p>
+</aside>
+<main>
+<div class="wrap">
+
+<p class="kicker">How the font works</p>
+<h1>Breaking characters</h1>
+<p class="lede">Keeping two signs apart when the font would join them.</p>
+<h2>The problem</h2>
+<p>The font applies ligatures in the direction of writing. If the pairs A–B and B–C both form ligatures, the sequence A–B–C always displays A–B, never B–C. Sometimes a ligature is also simply not wanted.</p>
+<h2>The solution</h2>
+<p>A <em>breaking ligature character</em> stops the font from joining two signs. It is invisible in the output. Djehuty uses the zero-width non-joiner (ZWNJ, U+200C), which is a joining control and does what is needed.</p>
+<div class="note">Earlier versions of the project's text recommended the zero-width space (ZWSP, U+200B). That character marks where a line may break and is not a joining control, so Djehuty does not use it.</div>
+<h2>Seeing the character</h2>
+<p>Breaking characters are invisible, but many editors show them with the formatting marks option switched on.</p>
+<div class="figs">
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/Without_Formatting_Marks.jpg" alt="Text without formatting marks"><figcaption>Without formatting marks.</figcaption></figure>
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/With_Formatting_Marks.jpg" alt="Text with formatting marks"><figcaption>With formatting marks: the editor shows the character.</figcaption></figure>
+</div>
+<h2>Where to use it</h2>
+<ul>
+  <li><strong>Only where needed.</strong> Use the character only to prevent specific wrong ligatures. This suits static texts such as articles and monographs.</li>
+  <li><strong>Between every quadrat.</strong> Separate every pair of signs that should not join. This suits texts that will be edited or reused, such as corpora and databases, because the rendering then does not depend on which ligatures a later font version contains.</li>
+</ul>
+<p>Both examples below look the same on screen. Their underlying characters differ.</p>
+<div class="figs">
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/BLC-display.jpg" alt="Two sentences as displayed"><figcaption>How both sentences display.</figcaption></figure>
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/BLC-hidden.jpg" alt="The underlying characters of the two sentences"><figcaption>Their underlying characters.</figcaption></figure>
+</div>
+<h2>Search</h2>
+<p class="note">Search functions treat breaking characters differently. Some ignore them, and others do not. Test the program you use before relying on a search.</p>
+
+<footer>Djehuty is an on-going project by Marwan Kilani, Freie Universität Berlin, supported by the Swiss National Science Foundation. Repository: <a href="https://github.com/MKilani/Djehuty">github.com/MKilani/Djehuty</a></footer>
+</div>
+</main>
+</div>
+</body>
+</html>

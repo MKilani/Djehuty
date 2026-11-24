@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Djehuty · Djehuty</title>
+<meta name="description" content="Djehuty: a Unicode font and input method for ancient Egyptian hieroglyphs.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <p class="brand">Djehuty</p>
+  <p class="brand-sub">Unicode hieroglyphs · font and input method</p>
+  <nav class="menu" aria-label="Site">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="why-unicode.html">Why Unicode?</a>
+      <a href="typing.html">Typing reference</a>
+      <a href="quadrats.html">Quadrats and ligatures</a>
+      <a href="breaking.html">Breaking characters</a>
+      <a href="font.html">The font</a>
+      <a href="examples.html">Examples and citation</a>
+      <a href="feedback.html">Feedback</a>
+  </nav>
+  <p class="aside-foot">Marwan Kilani<br>Freie Universität Berlin<br>Swiss National Science Foundation</p>
+</aside>
+<main>
+<div class="wrap">
+
+<h1>Djehuty</h1>
+<p class="lede">Type Egyptian hieroglyphs in any program, as ordinary Unicode text.</p>
+<div class="btns">
+  <a class="btn primary" href="https://github.com/MKilani/Djehuty/releases">Download for macOS</a>
+  <a class="btn" href="why-unicode.html">Why Unicode?</a>
+</div>
+
+<div class="video">
+  <!-- Add the demonstration video as how-it-works.mp4 next to this page. -->
+  <video controls preload="metadata" aria-label="How Djehuty works">
+    <source src="how-it-works.mp4" type="video/mp4">
+    Your browser does not support embedded video.
+  </video>
+  <p class="caption">How Djehuty works: a short demonstration.</p>
+</div>
+
+<h2 id="what">What it is</h2>
+<p class="lede-line">Djehuty is an input method for macOS. It takes the letters you type, shows a list of matching words or strings in hieroglyphs, and inserts the one you choose.</p>
+<div class="tiles">
+  <div class="tile"><span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></span><h3>Any program</h3><p>Works in any text field: editors, word processors, emails, browsers, databases and online forms.</p></div>
+  <div class="tile"><span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><h3>Searchable</h3><p>Hieroglyphs are characters. They can be searched, copied and sorted like any other text.</p></div>
+  <div class="tile"><span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span><h3>Exportable</h3><p>The text can be exported, for example to PDF, and stays searchable.</p></div>
+  <div class="tile"><span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5z"/><path d="m2 13 10 5 10-5"/></svg></span><h3>Two parts</h3><p>The EgyptianHiero font, which displays the signs, and Djehuty, which types them.</p></div>
+</div>
+
+<h2 id="how">How it works</h2>
+<div class="stepcards">
+  <div class="stepcard"><span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></span><h3>Type a code</h3><p>For example <code>kwi</code>. Each word in the dictionary has one or more transliteration codes.</p></div>
+  <div class="stepcard"><span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg></span><h3>Choose a word or string</h3><p>Press its number, or use the arrow keys and Return. The list learns: your usual choices rise to the top.</p></div>
+  <div class="stepcard"><span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5z"/><path d="m2 13 10 5 10-5"/></svg></span><h3>The font does the layout</h3><p>Signs are grouped into quadrats automatically. There is no need for position markers or control characters.</p></div>
+</div>
+
+<div class="callout">
+  <span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5z"/><path d="m2 13 10 5 10-5"/></svg></span>
+  <div>
+    <h3>Ligatures</h3>
+    <p>The font joins signs that belong together, so you never have to say how to stack or combine them. You only say where to keep them apart: type <code>0</code> and choose the first entry in the list, an invisible breaking character. It stops the font from joining the signs on either side.</p>
+  </div>
+</div>
+<div class="figs">
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/htp.jpg" alt="The signs htp in sequence"><figcaption>Typed in order: htp.</figcaption></figure>
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/htp-qad.jpg" alt="The signs htp set as a quadrat"><figcaption>Displayed as one quadrat.</figcaption></figure>
+</div>
+
+<div class="callout">
+  <span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></span>
+  <div>
+    <h3>Breaking characters</h3>
+    <p>Where two signs must stay apart, Djehuty inserts an invisible breaking character, the zero-width non-joiner (U+200C). It does not show in the text. <a href="quadrats.html">Quadrats and ligatures</a> and <a href="breaking.html">Breaking characters</a> explain both.</p>
+  </div>
+</div>
+<div class="mini-figs">
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/Without_Formatting_Marks.jpg" alt="Text without formatting marks"><figcaption>Without formatting marks.</figcaption></figure>
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/With_Formatting_Marks.jpg" alt="Text with formatting marks"><figcaption>With formatting marks: the editor shows the character.</figcaption></figure>
+</div>
+
+<h2 id="install">How to get and install it</h2>
+<div class="stepcards">
+  <div class="stepcard"><span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 17v3h16v-3"/></svg></span><h3>Download</h3><p>Get <code>Djehuty.pkg</code> from the Releases page. macOS 12 or later, Intel and Apple silicon.</p></div>
+  <div class="stepcard"><span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></span><h3>Install and log out</h3><p>Run the installer, which also installs the EgyptianHiero font. Then log out and back in.</p></div>
+  <div class="stepcard"><span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></span><h3>Add the input</h3><p>System Settings, Keyboard, Text Input, Edit. Add <em>Djehuty (Egyptian Hieroglyphs)</em>.</p></div>
+  <div class="stepcard"><span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></span><h3>Deploy</h3><p>Choose <em>Deploy</em> from the Djehuty menu bar icon. Repeat after each update.</p></div>
+</div>
+<div class="callout">
+  <span class="ic-wrap" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg></span>
+  <div>
+    <h3>If macOS blocks the installer</h3>
+    <p>An unsigned installer may be reported as coming from an unidentified developer. Open System Settings, Privacy &amp; Security, and choose <em>Open Anyway</em>. The <a href="https://github.com/MKilani/Djehuty/blob/master/USER_GUIDE.md">user guide</a> has the full instructions.</p>
+  </div>
+</div>
+
+<footer>Djehuty is an on-going project by Marwan Kilani, Freie Universität Berlin, supported by the Swiss National Science Foundation. Repository: <a href="https://github.com/MKilani/Djehuty">github.com/MKilani/Djehuty</a></footer>
+</div>
+</main>
+</div>
+</body>
+</html>

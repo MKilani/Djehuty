@@ -1,0 +1,34 @@
+#!/bin/bash
+set -e
+
+login_user=`/usr/bin/stat -f%Su /dev/console`
+app_root="${DSTROOT}/Djehuty.app"
+app_executable="${app_root}/Contents/MacOS/Djehuty"
+shared_data_path="${app_root}/Contents/SharedSupport"
+
+/usr/bin/sudo -u "${login_user}" /usr/bin/killall Djehuty > /dev/null || true
+
+# Remove the user's cached copies of djehuty.yaml so the new settings take effect at the next
+# start, without choosing Deploy. Rime keeps one copy in the user folder and a compiled one in
+# build/. The previous copy is kept as djehuty.yaml.previous.
+user_home=`/usr/bin/dscl . -read "/Users/${login_user}" NFSHomeDirectory 2>/dev/null | /usr/bin/awk '{print $2}'`
+user_dir="${user_home}/Library/Djehuty"
+if [ -n "${user_home}" ] && [ -d "${user_dir}" ]; then
+    if [ -f "${user_dir}/djehuty.yaml" ]; then
+        /bin/mv -f "${user_dir}/djehuty.yaml" "${user_dir}/djehuty.yaml.previous" || true
+    fi
+    /bin/rm -f "${user_dir}/build/djehuty.yaml" || true
+fi
+
+"${app_executable}" --register-input-source
+
+"${app_executable}" --install-fonts || echo "warning: could not install the hieroglyph font"
+
+if [ -z "${RIME_NO_PREBUILD}" ]; then
+    pushd "${shared_data_path}" > /dev/null
+    "${app_executable}" --build
+    popd > /dev/null
+fi && (
+    /usr/bin/sudo -u "${login_user}" "${app_executable}" --enable-input-source
+    /usr/bin/sudo -u "${login_user}" "${app_executable}" --select-input-source
+)

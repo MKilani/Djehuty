@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadrats and ligatures · Djehuty</title>
+<meta name="description" content="Djehuty: a Unicode font and input method for ancient Egyptian hieroglyphs.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <p class="brand">Djehuty</p>
+  <p class="brand-sub">Unicode hieroglyphs · font and input method</p>
+  <nav class="menu" aria-label="Site">
+      <a href="index.html">Overview</a>
+      <a href="why-unicode.html">Why Unicode?</a>
+      <a href="typing.html">Typing reference</a>
+      <a href="quadrats.html" aria-current="page">Quadrats and ligatures</a>
+      <a href="breaking.html">Breaking characters</a>
+      <a href="font.html">The font</a>
+      <a href="examples.html">Examples and citation</a>
+      <a href="feedback.html">Feedback</a>
+  </nav>
+  <p class="aside-foot">Marwan Kilani<br>Freie Universität Berlin<br>Swiss National Science Foundation</p>
+</aside>
+<main>
+<div class="wrap">
+
+<p class="kicker">How the font works</p>
+<h1>Quadrats and ligatures</h1>
+<p class="lede">Why signs are typed in order and grouped by the font.</p>
+<h2>The problem</h2>
+<p>In actual texts, hieroglyphs are usually distributed into <em>quadrats</em>: virtual rectangles or squares that organise the signs in space. The sign group <em>htp</em> is commonly set as a single quadrat, not as a line.</p>
+<div class="figs">
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/htp.jpg" alt="The signs htp in sequence"><figcaption>The sequence, as encoded.</figcaption></figure>
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/htp-qad.jpg" alt="The signs htp set as a quadrat"><figcaption>The same sequence, set as a quadrat.</figcaption></figure>
+</div>
+<h2>Ligatures</h2>
+<p>The font does this through <em>ligatures</em>: substitutions stored in the font itself. Typography offers familiar examples. The English sequence <em>f</em> + <em>i</em> is set as a single ligature, and in Devanagari the sequence ह + म becomes one conjunct.</p>
+<div class="figs">
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/fi-fi.jpg" alt="The letters f and i"><figcaption>The English sequence f + i.</figcaption></figure>
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/fi_lig.jpg" alt="The fi ligature"><figcaption>Set as a ligature.</figcaption></figure>
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/ma-ha.jpg" alt="The Devanagari letters ha and ma"><figcaption>The Devanagari sequence ह + म.</figcaption></figure>
+  <figure><img src="https://github.com/MKilani/Djehuty/raw/master/imagesReadme/ma-ha_lig.jpg" alt="The ma-ha conjunct"><figcaption>Set as a conjunct.</figcaption></figure>
+</div>
+<p>EgyptianHiero works the same way. When it meets a sequence of signs that matches one of its ligatures, it arranges them as the corresponding quadrat.</p>
+<h2>What follows</h2>
+<ul>
+  <li><strong>No positional markers.</strong> Signs are typed one after the other. Unlike Manuel de Codage or JSesh, no characters such as <code>:</code>, <code>*</code> or <code>-</code> are needed.</li>
+  <li><strong>Search still works.</strong> A quadrat still corresponds to its sequence, so search finds signs inside quadrats, and sequences that span several quadrats.</li>
+  <li><strong>Only encoded quadrats.</strong> The font displays only the quadrats it encodes; custom quadrats cannot be built. Version 9.03 encodes about 10,600 ligatures, and new ones are added with each release. Requests for additional quadrats are welcome.</li>
+</ul>
+
+<footer>Djehuty is an on-going project by Marwan Kilani, Freie Universität Berlin, supported by the Swiss National Science Foundation. Repository: <a href="https://github.com/MKilani/Djehuty">github.com/MKilani/Djehuty</a></footer>
+</div>
+</main>
+</div>
+</body>
+</html>

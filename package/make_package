@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+DERIVED_DATA_PATH=$1
+APP_NAME='Djehuty'
+BUNDLE_IDENTIFIER='io.github.mkilani.inputmethod.Djehuty'
+INSTALL_LOCATION='/Library/Input Methods'
+
+cd "$(dirname $0)"
+source common.sh
+
+pkgbuild \
+    --root "${PROJECT_ROOT}/${DERIVED_DATA_PATH}/Build/Products/Release" \
+    --filter '.*\.swiftmodule$' \
+    --component-plist ${APP_NAME}-component.plist \
+    --identifier "${BUNDLE_IDENTIFIER}" \
+    --version "$(get_app_version)" \
+    --install-location "${INSTALL_LOCATION}" \
+    --scripts "${PROJECT_ROOT}/scripts" \
+    ${APP_NAME}-component.pkg
+
+sed "s/@VERSION@/$(get_app_version)/" Distribution > Distribution-versioned.xml
+
+productbuild \
+    --distribution Distribution-versioned.xml \
+    --package-path . \
+    --resources . \
+    ${APP_NAME}.pkg
+
+rm Distribution-versioned.xml
+rm ${APP_NAME}-component.pkg

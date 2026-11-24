@@ -1,0 +1,61 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "CFBundleDisplayName": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Djehuty"
+          }
+        }
+      }
+    },
+    "CFBundleName": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Djehuty"
+          }
+        }
+      }
+    },
+    "io.github.mkilani.inputmethod.Djehuty": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Djehuty"
+          }
+        }
+      }
+    },
+    "NSHumanReadableCopyright": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Djehuty is based on Squirrel and librime (Rime). Licensed under GPL v3."
+          }
+        }
+      }
+    },
+    "io.github.mkilani.inputmethod.Djehuty.Hieroglyphs": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Djehuty (Egyptian Hieroglyphs)"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

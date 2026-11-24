@@ -1,0 +1,11 @@
+{
+  "bundle_id": "io.github.mkilani.inputmethod.Djehuty",
+  "input_methods": [
+    {
+      "id": "Hieroglyphs",
+      "name": "Egyptian Hieroglyphs",
+      "language": "egy",
+      "schema": "hiero_no_caps"
+    }
+  ]
+}

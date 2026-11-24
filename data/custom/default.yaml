@@ -1,0 +1,52 @@
+# Rime default settings for Djehuty (Egyptian hieroglyphs only)
+# encoding: utf-8
+
+config_version: '1.0'
+
+# BEGIN schema_list (generated from input-methods.json; do not edit by hand)
+schema_list:
+  - schema: hiero_no_caps
+# END schema_list
+
+switcher:
+  caption: "[Schema]"
+  hotkeys:
+    - Control+grave
+    - F4
+  fold_options: true
+  abbreviate_options: true
+
+menu:
+  page_size: 7
+
+ascii_composer:
+  good_old_caps_lock: true
+  switch_key:
+    Shift_L: commit_code
+    Shift_R: commit_code
+    Control_L: noop
+    Control_R: noop
+    Caps_Lock: clear
+    Eisu_toggle: clear
+
+key_binder:
+  bindings:
+    - {when: has_menu, accept: comma, send: Page_Down}
+
+punctuator:
+  half_shape:
+    ",": ","
+    ".": "."
+    "?": "?"
+    "!": "!"
+    ";": ";"
+    ":": ":"
+    "(": "("
+    ")": ")"
+    "[": "["
+    "]": "]"
+    "{": "{"
+    "}": "}"
+
+recognizer:
+  patterns: {}

@@ -1,0 +1,25 @@
+Djehuty notices
+
+Djehuty is derived from Squirrel, the macOS frontend of the Rime Input Method Engine
+(https://rime.im). Squirrel is licensed under GPL v3; see LICENSE.txt. Copyright belongs to
+the Rime project and its contributors.
+
+Third-party components used by the build:
+- librime (BSD-3-Clause), https://github.com/rime/librime
+- Sparkle (MIT), https://github.com/sparkle-project/Sparkle (framework is bundled but
+  automatic updates are disabled and no update feed is configured)
+- Boost, LevelDB, marisa-trie, OpenCC, yaml-cpp: included in librime's binaries
+  (see librime's own notices)
+
+Egyptian hieroglyph data:
+- hiero_no_caps.dict.yaml and hiero_no_caps.schema.yaml. Author of the schema and dictionary:
+  Marwan Kilani. The dictionary header states: creative commons attribution-share alike 3.0
+  (http://creativecommons.org/licenses/by-sa/3.0/) and references CC-CEDICT
+  (http://cc-cedict.org/wiki/).
+
+Hieroglyph font:
+- EgyptianHiero9_03.ttf (internal version 9.03, November 2026), designed by Marwan Kilani
+  (copyright 2017-2020, all rights reserved by the author, who distributes it with Djehuty).
+- Its glyph outlines are based on Mark-Jan Nederhof's font NewGardiner. Check NewGardiner's
+  own license terms for any conditions on redistribution.
+- The app icon and menu icon are generated from this font (package/make_icons.py).

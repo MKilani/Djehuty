@@ -1,154 +1,101 @@
 # Djehuty
 
-Djehuty is an on-going project by Marwan Kilani (Freie Universität Berlin - Swiss National Science Foundation) aiming at the development of a Unicode font and Input Method for ancient Egyptian hieroglyphs.
+Djehuty is an input method for macOS that types Egyptian hieroglyphs. It is built on
+Squirrel and the Rime input engine (librime), and it contains no Chinese input at all.
+It installs side by side with the regular Squirrel input method.
 
-A first working version of the font is already available and it is provided in the present repository.
+Project: https://github.com/MKilani/Djehuty
 
-A beta version of the Input Method will be published here soon.
+## Using Djehuty
 
-## Unicode hieroglyphs: what for?
+1. Install the package (see INSTALL.md) and log out and back in.
+2. In System Settings > Keyboard > Text Input > Edit, add "Djehuty (Egyptian Hieroglyphs)".
+3. Select it from the input menu in the menu bar.
 
-Unicode hieroglyphs are meant to provide an easy and effective way to transcribe Egyptian Hierogypliphs as strings of texts, rather than as automatically generated images, as it is the case of tools like jSesh. Dealing with hieroglyphs as strings of texts has a series of advantages: unicode hieroglpyhs can be used in and editor or text field, and can be manipulated as any other text. For instance, unicode hieroglyphs can be inserted, as text, within any text written with a text editor. They can also be searched using standard search tools, for instance in text editors or in online search engines. Unicode hieroglyphs can also be used, and searched for, in databases and in tables. They can be exported in standard .pdf files and searched within them.
+The menu bar shows `𓄿` for hieroglyph input and `A` for ASCII (Latin) mode. Toggle
+between them with Shift, as in other Rime-based input methods.
 
-Unicode hieroglyphs, however, can only be manipulated within the limits of the font used to display them. Overall, this means that unicode hierogplyphs are often not suited, and in fact are not meant for paleographically accurate transcriptions of texts on actual objects. Rather, they are meant to transcribe texts in a uniform way, for instance when a text has to be quote and discussed in a scientific paper because of its literary or linguistic content, rather than because of its actual appearence on the actual support.
+Type a transliteration code and choose a hieroglyph from the candidate list. For
+example, `kwi` shows candidates such as 𓎡𓅱𓀀 first. Press `F4` or `Control+Grave` to see
+the schema options.
 
-Think about a medieval Latin manuscript: one can provide an accurate, form-wise paleographical copy of it, in which all the graphic peculiarities of letters characterising the style of the specific scribe are accurately reproduced, or one can provide a content-wise accurate transcription in a standard modern Latin-script font, for instance in the context of a critical edition of the text. Unicode hierogliphs are meant for the Egyptological equivalent of the latter.
+## Adding more input methods
 
-## Font
+See INPUT_METHODS.md. Input methods are listed in `input-methods.json`; adding one (for example Demotic) is a data change, not a code change.
 
-   Download: 
-   
-   [EgyptianHiero 4.03](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero4.03.ttf)
-   
-   Font name: EgyptianHiero  
-   Version: 4.03 - October 14 2019  
-   Format: TrueType® Font
+## Files
 
-   Designed by Marwan Kilani, 2017-9.  
-   Glyph outlines based on Mark-Jan Nederhof's font NewGardiner.  
-   All Rights Reserved
+| Path | Purpose |
+| --- | --- |
+| `data/custom/hiero_no_caps.schema.yaml` | Egyptian input schema (speller, algebra, menu-bar states). |
+| `data/custom/hiero_no_caps.dict.yaml` | Egyptian hieroglyph dictionary (code to glyph). |
+| `data/custom/default.yaml` | Offers only the Egyptian schema; sets paging and punctuation. |
+| `data/custom/djehuty.yaml` | Appearance and behavior of the candidate window. |
+| `sources/` | macOS frontend (InputMethodKit controller, candidate panel, app delegate). |
+| `input-methods.json` | The list of input methods (name, language, schema). |
+| `package/generate_input_methods.py` | Generates the macOS input-mode declarations and schema list from the list above. |
+| `resources/Info.plist` | Input source registration and bundle identity (generated; see INPUT_METHODS.md). |
 
-   Legacy versions (these contain less ligatures, they are more suited for basic tasks):
+Edit files in `data/custom/` and rebuild. The Makefile copies them into the app bundle.
 
-   [EgyptianHiero 3.03a ttf](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero3.03a.ttf)
+## Side-by-side with Squirrel
 
-   [EgyptianHiero 3.03a woff](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero3.03a.woff)
-   
-   [EgyptianHiero 3.03a woff2](https://github.com/MKilani/Djehuty/blob/master/EgyptianHiero3.03a.woff2)
+Djehuty has its own bundle identifier (`io.github.mkilani.inputmethod.Djehuty`), its own
+app name (`Djehuty.app`), its own connection name, its own user data folder
+(`~/Library/Djehuty`), and its own notification names. It does not read or change
+`~/Library/Rime`, and the two can be installed and used at the same time.
 
-### How to cite
+## Known data issues
 
-Kilani Marwan, 2019, Djehuty - Font EgyptianHiero 4.02 (4.3.2019), https://github.com/MKilani/Djehuty
+The dictionary is included as provided. Review these before a wide release:
 
-### How the font works, and how to use it correctly
+- **Mixed case.** About 9,700 codes contain uppercase letters (for example `kA`, `Tn`).
+  The schema is named `hiero_no_caps` and its description says it is case-insensitive,
+  but Rime matches codes case-sensitively, so `ka` will not find `kA`. Decide whether
+  to lowercase all codes or keep case-sensitive input.
+- **Markup in glyph text.** About 2,900 entries contain Gardiner/Manuel-style markup
+  such as `§G7C§` inside the glyph column. These are committed as literal text.
+- **Unusual codes.** About 4,000 codes include digits or symbols (for example `A1`, `A5a`).
+- **Duplicates.** 632 (glyph, code) pairs appear more than once.
 
-#### The problem
+## Known limitations
 
-In actual texts, hieroglyphs are usually distributed into so-called "quadrats", namely virtual rectangles or squares that provide a conceptual frame to organize the signs into space. For instance, the signs ![](imagesReadme/htp.jpg) , are usually not written in a linear sequence, one after the other, but they are rather reorganized within a single quadrat, in the form ![](imagesReadme/htp-qad.jpg) .
+- The app icon and mode icon are still the Rime artwork (`resources/rime.pdf`, `Rime.icon/`).
+  Replace them with your own before distribution.
+- Some candidate-window style presets in `djehuty.yaml` name Chinese fonts. They are
+  harmless for hieroglyphs but can be removed.
+- The menu-bar glyph `𓄿` depends on the system's font fallback for Egyptian hieroglyphs.
+  Check it on your macOS version.
 
-In contrast with other fonts, which display hieroglyphs only in linear sequences, EgyptianHiero reorganize the signs into quadrats.
+## License
 
-#### Ligatures for quadrats
+Djehuty's source code is licensed under GPL v3 (see LICENSE.txt). See NOTICE for the
+upstream projects and their licenses. The Egyptian dictionary carries the license and
+attribution stated in its header (CC BY-SA 3.0; see NOTICE).
 
-In order to organize and display the hieroglyphs into quadrats, the EgyptianHiero font uses a series of *ligatures* pre-encoded in the font itself.
+## Font and icons
 
-In order to understand what this means, take the example of the English ligature ![](imagesReadme/fi-fi.jpg) or the Sanskrit ligature ![](imagesReadme/ma-ha.jpg) . In these cases, fonts that support ligatures will automatically turn any sequence f + i or  ह + म into their corresponding ligatures, thus displaying them as ![](imagesReadme/fi_lig.jpg) and ![](imagesReadme/ma-ha_lig.jpg) respectively.
+- **Hieroglyph font.** The installer includes `EgyptianHiero9_03.ttf` (version 9.03) and
+  installs it to `/Library/Fonts` on first installation. It never replaces a copy that is
+  as new as the bundled one or newer. An older copy is replaced only when the bundled
+  version is newer than every installed copy. The candidate window and the menu-bar glyph
+  use this font.
+- **App icon.** `resources/DjehutyIcon.icns`: the sacred ibis sign (Gardiner G026) on a
+  lapis-blue rounded square.
+- **Menu icon.** `resources/djehuty.pdf`: a black vector outline of the same sign.
+- `package/make_icons.py` regenerates both from the font (`pip3 install fonttools pillow`).
+  Change the sign with its second argument (`G025` gives the standing bird).
 
-EgyptianHiero uses the same mechanism to organize signs into quadrats: every time the font encounters a sequence of signs corresponding to one of its pre-encoded ligatures, it will reorganize the signs into quadrats accordingly.
+The font is by Marwan Kilani (see NOTICE).
 
-Therefore, every time the font will encounter a sequence ![](imagesReadme/htp.jpg), it will display it as a ligature/quadrat ![](imagesReadme/htp-qad.jpg).
+## Versioning
 
-This approach has a series of implications that need to be considered:
+The version lives in the `VERSION` file. Increase it for every release: the app,
+the Xcode build, and the installer use it, and the release zip is named after it.
 
-1. Since ligatures are embedded in the font and automatically rendered, there is no need to use any special character to indicate the relative position of the signs. No need for positional cmarkers like : , * , - as in Manuel de Codage or Jsesh. Just input the hieroglyphs one after the other, the font will take care of grouping them into quadrats.
+## Changing the appearance
 
-2. Since no special character is used, a quadrat ![](imagesReadme/htp-qad.jpg) will still correspond to an underlying sequence ![](imagesReadme/htp.jpg). This means that in general search functions (e.g. in online search engines or text files and text editors) can find signs within quadrats, and can even find sequences of signs spread over different quadrats.
-
-3. Only ligatures, i.e. only quadrats that are pre-encoded in the font can be displayed by the font. This is an important point: one cannot create custom quadrats using EgyptianHiero – only the quadrats that are already known by the font can be displayed. 
-
-This is not an issue, as the font already contains over 3000 ligatures/quadrats, and new are added with each new release. Right now, most quadrats attested in the TLA are encoded, as well as many other extracted from various Late Egyptian texts. Most texts can thus be transcribed without relevant issues. However, I am still adding ligatures, as I encounter new quadrats in the texts I am working on - obviously the more texts one is transcribing, the more quadrats are encountered.
-
-In this respect, Users are encouraged to send to me any additional quadrat they would like to have in the font: I will gladly add them in the next release.
-
-Moreover, one also has to take into account the purpose of texts encode with Unicode fonts, on which see below § Unicode hieroglyphs: what for?
-
-#### Breaking ligatures
-
-As said, EgyptianHiero does not use any special character to create quadrats – quadrats are generated automatically every time the font encounters a relevant sequence of characters. There are cases, however, where one may NOT want two signs to be combined into a ligature/quadrat. Conflicts between ligatures can also happen, as the font process ligatures according the direction of writing. This means that if e.g. both the signs A-B and the signs B-C form a ligature, in the case of a sequence A-B-C, the font will always display the ligature A-B (which comes first) and never the ligature B-C (which follows).
-
-##### Breaking Ligature Character
-
-This issue can be easily solved by using a Breaking Ligature Character (BLC). A BLC is a special invisible character that prevents the font from joining two signs into a quadrat. The sign I use to use for this purpose is the special character Zero-width space (ZWSP – unicode U+200B – see [Wiki: Zero-Width Space](https://en.wikipedia.org/wiki/Zero-width_space) ).
-
-An alternative sign that could be used is the Zero-width non-joiner (ZWNJ – unicode U+200C – see [Wiki: Zero-Width non-joiner]( https://en.wikipedia.org/wiki/Zero-width_non-joiner ) ).
-
-For now, I prefer the first as it is easier to manipulate in text editors like LibreOffice. However, and comment or suggestion on this point is welcome.
-
-
-##### Search with Breaking Ligature Character
-
-Browsers and online search engines deal with the ZWSP in different ways. Some just ignore it, which means that sequences of hieroglyphs can be found even though they are distributed over different quadrats separated by ZWSP.
-
-As for text editors, they often have search functions that ignore white spaces. These functions can be used to ignore the ZWSP.
-
-These features, however, tend to change from one version to the other, and more testing is needed to define the specific behaviours of every software and version. Here as well, any consideration, comment or suggestion is welcome.
-
-##### Visualizing the Breaking Ligature Character
-
-The ZWSP is invisible in the final output, but various text editors allow displaying it together with other Formatting Marks when the Formatting Marks option is activated. 
-Therefore, for instance:
-
-- Without Formatting Marks option activated
-
-<p align="center">
-<img src="imagesReadme/Without_Formatting_Marks.jpg" width="400">
-</p>
-
-- With Formatting Marks option activated
-
-<p align="center">
-<img src="imagesReadme/With_Formatting_Marks.jpg" width="400">
-</p>
-
-##### When to use the Breaking Ligature Character – suggest best practice
-
-Breaking Ligature Characters can be used in two ways.
-
-1. The first option is to use them only to prevent the display of specific wrong ligatures.
-
-2. The second option is to use them between every quadrat and in general to separate every sign that is not supposed to form a ligature.
-
-Consider the following two examples: the two sentences in the image are displayed exactly in the same way:
-
-<p align="center">
-<img src="imagesReadme/BLC-display.jpg" width="600">
-</p>
-
-Their underlying structure, however, is different, one reflecting the first approach, the other reflecting the second.
-
-<p align="center">
-<img src="imagesReadme/BLC-hidden.jpg" width="600">
-</p>
-
-Both approaches are valid, depending on the context and use of the text.
-
-In case of static texts that are not going to be modified in the future (e.g. the texts meant to be published in articles and monographs), the first approach is probably more practical. By contrast, in the case of texts that are expected to be used and edited in the future (e.g. in database and text corpora) the second approach may be more appropriate, as it ensures compatibility with future versions of the font – by separating ever sign that should NOT be joined by a ligature, one is sure that the rendition of the text will not be affected by the addition of new ligatures in future versions of the font.
-
-## Input Method
-
-Coming soon.
-
-## Examples
-
-The font EgyptianHiero has being used in the following projects and publications:
-
-* **Digitale Einführung in die hieroglyphisch-ägyptische Schrift und Sprache**  
-   Daniel A. Werning  
-   Humboldt-Universität zu Berlin: Berlin 2018–...  
-   https://wikis.hu-berlin.de/ancientegyptian/Inhaltsverzeichnis
-
-
-–-
-
-Last Update: 21.10.2019
-
+Rime keeps a copy of `djehuty.yaml` in `~/Library/Djehuty`, and it only replaces that copy
+when `config_version` in the file increases. So whenever `data/custom/djehuty.yaml` changes,
+increase `config_version` (for example from '1.1' to '1.2'). Otherwise the change does not
+reach users who already have a copy.

@@ -1,0 +1,184 @@
+//
+//  Main.swift
+//  Djehuty
+//
+//  Created by Leo Liu on 5/10/24.
+//
+
+import Foundation
+import InputMethodKit
+
+@main
+struct SquirrelApp {
+  static let userDir = if let pwuid = getpwuid(getuid()) {
+    URL(fileURLWithFileSystemRepresentation: pwuid.pointee.pw_dir, isDirectory: true, relativeTo: nil).appendingPathComponent("Library").appendingPathComponent("Djehuty")
+  } else {
+    try! FileManager.default.url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("Rime", isDirectory: true)
+  }
+  static let appDir = "/Library/Input Methods/Djehuty.app".withCString { dir in
+    URL(fileURLWithFileSystemRepresentation: dir, isDirectory: false, relativeTo: nil)
+  }
+  static let logDir = FileManager.default.temporaryDirectory.appendingPathComponent("rime.djehuty", isDirectory: true)
+
+  // swiftlint:disable:next cyclomatic_complexity
+  static func main() {
+    let rimeAPI: RimeApi_stdbool = rime_get_api_stdbool().pointee
+
+    let handled = autoreleasepool {
+      let installer = SquirrelInstaller()
+      let args = CommandLine.arguments
+      if args.count > 1 {
+        switch args[1] {
+        case "--quit":
+          let bundleId = Bundle.main.bundleIdentifier!
+          let runningSquirrels = NSRunningApplication.runningApplications(withBundleIdentifier: bundleId)
+          runningSquirrels.forEach { $0.terminate() }
+          return true
+        case "--reload":
+          // Djehuty is a background app, and AppKit suspends distributed-notification delivery to inactive apps;
+          // deliverImmediately is required for these notifications to reach Djehuty while it stays in the background
+          DistributedNotificationCenter.default().postNotificationName(.init("DjehutyReloadNotification"), object: nil, userInfo: nil, deliverImmediately: true)
+          return true
+        case "--register-input-source", "--install":
+          installer.register()
+          return true
+        case "--enable-input-source":
+          if args.count > 2 {
+            let modes = Array(args[2...])
+            if !modes.isEmpty {
+              installer.enable(modes: modes)
+              return true
+            }
+          }
+          installer.enable()
+          return true
+        case "--disable-input-source":
+          if args.count > 2 {
+            let modes = Array(args[2...])
+            if !modes.isEmpty {
+              installer.disable(modes: modes)
+              return true
+            }
+          }
+          installer.disable()
+          return true
+        case "--select-input-source":
+          if args.count > 2 {
+            installer.select(mode: args[2])
+          } else {
+            installer.select()
+          }
+          return true
+        case "--install-fonts":
+          FontInstaller.installIfNewer()
+          return true
+        case "--build":
+          SquirrelApplicationDelegate.showMessage(msgText: NSLocalizedString("deploy_update", comment: ""))
+          var builderTraits = RimeTraits.rimeStructInit()
+          builderTraits.setCString("rime.djehuty-builder", to: \.app_name)
+          rimeAPI.setup(&builderTraits)
+          rimeAPI.deployer_initialize(nil)
+          _ = rimeAPI.deploy()
+          return true
+        case "--sync":
+          DistributedNotificationCenter.default().postNotificationName(.init("DjehutySyncNotification"), object: nil, userInfo: nil, deliverImmediately: true)
+          return true
+        case "--ascii":
+          DistributedNotificationCenter.default().postNotificationName(.init("DjehutyToggleASCIIModeNotification"), object: "ascii", userInfo: nil, deliverImmediately: true)
+          return true
+        case "--nascii":
+          DistributedNotificationCenter.default().postNotificationName(.init("DjehutyToggleASCIIModeNotification"), object: "nascii", userInfo: nil, deliverImmediately: true)
+          return true
+        case "--getascii":
+          var responseReceived = false
+          var asciiStatus = ""
+          let observer = DistributedNotificationCenter.default().addObserver(
+            forName: .init("DjehutyASCIIModeResponse"),
+            object: nil,
+            queue: .main
+          ) { notification in
+            if let status = notification.object as? String {
+              asciiStatus = status
+              responseReceived = true
+            }
+          }
+          DistributedNotificationCenter.default().postNotificationName(.init("DjehutyGetASCIIModeNotification"), object: nil, userInfo: nil, deliverImmediately: true)
+          let timeout = Date().addingTimeInterval(2.0)
+          while !responseReceived && Date() < timeout {
+            RunLoop.current.run(until: Date().addingTimeInterval(0.01))
+          }
+          DistributedNotificationCenter.default().removeObserver(observer)
+          if responseReceived {
+            print(asciiStatus)
+          } else {
+            print("nascii")
+          }
+          return true
+        case "--help":
+          print(helpDoc)
+          return true
+        default:
+          break
+        }
+      }
+      return false
+    }
+    if handled {
+      return
+    }
+
+    autoreleasepool {
+      let main = Bundle.main
+      let connectionName = main.object(forInfoDictionaryKey: "InputMethodConnectionName") as! String
+      _ = IMKServer(name: connectionName, bundleIdentifier: main.bundleIdentifier!)
+      let app = NSApplication.shared
+      let delegate = SquirrelApplicationDelegate()
+      app.delegate = delegate
+      app.setActivationPolicy(.accessory)
+
+      // OpenCC uses relative dictionary paths from SharedSupport.
+      FileManager.default.changeCurrentDirectoryPath(main.sharedSupportPath!)
+
+      if NSApp.squirrelAppDelegate.problematicLaunchDetected() {
+        print("Problematic launch detected!")
+        let args = ["Problematic launch detected! Djehuty may be suffering a crash due to improper configuration. Revert previous modifications to see if the problem recurs."]
+        let task = Process()
+        task.executableURL = "/usr/bin/say".withCString { dir in
+          URL(fileURLWithFileSystemRepresentation: dir, isDirectory: false, relativeTo: nil)
+        }
+        task.arguments = args
+        try? task.run()
+      } else {
+        NSApp.squirrelAppDelegate.setupRime()
+        // Full check at every start, as Deploy does: the settings file is updated before
+        // loadSettings() reads it. A start with fullCheck false used the old settings.
+        NSApp.squirrelAppDelegate.startRime(fullCheck: true)
+        NSApp.squirrelAppDelegate.loadSettings()
+        NSApp.squirrelAppDelegate.deployOnNewVersion()
+        print("Djehuty reporting!")
+      }
+
+      app.run()
+      print("Djehuty is quitting...")
+      rimeAPI.finalize()
+    }
+    return
+  }
+
+  static let helpDoc = """
+Supported arguments:
+Perform actions:
+  --quit                     quit all Djehuty process
+  --reload                   deploy
+  --sync                     sync user data
+  --build                    build all schemas in current directory
+  --ascii                    turn on ASCII mode
+  --nascii                   turn off ASCII mode
+  --getascii                 get current ASCII mode status
+Install Djehuty:
+  --install, --register-input-source    register input source
+  --enable-input-source [source id...]  input source list optional
+  --disable-input-source [source id...] input source list optional
+  --select-input-source [source id]     input source optional
+"""
+}

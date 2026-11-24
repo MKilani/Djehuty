@@ -1,0 +1,123 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "A new update is available": {
+      "comment": "Update",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A new update is available"
+          }
+        }
+      }
+    },
+    "Deploy": {
+      "comment": "Menu item",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deploy"
+          }
+        }
+      }
+    },
+    "deploy_failure": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Error occurred. Please check log files"
+          }
+        }
+      }
+    },
+    "deploy_start": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deploying Rime input method engine."
+          }
+        }
+      }
+    },
+    "deploy_success": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Djehuty is ready."
+          }
+        }
+      }
+    },
+    "deploy_update": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deploying Rime for updates."
+          }
+        }
+      }
+    },
+    "Logs...": {
+      "comment": "Menu item",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logs..."
+          }
+        }
+      }
+    },
+    "Settings...": {
+      "comment": "Menu item",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings..."
+          }
+        }
+      }
+    },
+    "Djehuty": {
+      "comment": "Menu title",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Djehuty"
+          }
+        }
+      }
+    },
+    "Sync user data": {
+      "comment": "Menu item",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sync user data"
+          }
+        }
+      }
+    },
+    "Version [version] is now available": {
+      "comment": "Update",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version [version] is now available"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,8 @@
+Place these images in this folder (they are linked from docs/*.html):
+
+htp.jpg, htp-qad.jpg, fi-fi.jpg, fi_lig.jpg, ma-ha.jpg, ma-ha_lig.jpg,
+Without_Formatting_Marks.jpg, With_Formatting_Marks.jpg,
+BLC-display.jpg, BLC-hidden.jpg
+
+They are currently served from https://github.com/MKilani/Djehuty/raw/master/imagesReadme/
+until this repository replaces that one.
